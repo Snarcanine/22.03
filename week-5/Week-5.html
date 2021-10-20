@@ -22,8 +22,8 @@
 
 - Heat transfer options:
     1. Shifting solid conduit/insulators into and out of alignment 
-        -Pros: No electricity
-        -Cons: Moving parts add complexity, less user friendly
+        - Pros:No electricity
+        - Cons:Moving parts add complexity, less user friendly
     2. Liquid piping 
         - Pros:No moving parts, potentially easier to have heat gradient
         - Cons:Finding appropriate liquid medium that is stable and won't decay/corrode, need to integrate a pumping mechanism (likely requires electricity)
@@ -61,6 +61,15 @@ A couple downsides to using a stirling engine include:
 3. In some very rare cases, using air as the working fluid while also having it in contact with flammable substance such as lubricating oil can lead to an explosion hazard due to the high partial pressure of oxygen. I think this can fairly easily be avoided in our engine though.
 
 
+Addressing some initial questions and concerns:
+- Will the system be resilient enough for our application? I believe so. Maintenance demands are fairly minimal and these systems are designed to operate at steady-state for prolonged periods of time.
+- What will the temperature range of functionality be and will the heating/cooling process of our storage medium substantially impact that? 
+Because a stirling generator runs on a temperature differential rather than raw input heat, I don't think the heating and cooling of our storage will be problematic.
+Additionally, so long as the working fluid's container is designed with the max temperature of our storage in mind (to ensure the vessl can handle the max possible temp and pressure) then it will be plenty resilient to withstand the lower part of the range.
+The one area I see for potential improvement would be to add some kind of coolant to better cool our cold side of the chamber. This could be something as simple as a water jacket which users could optionally fill. Because the storage has the potential to get incredibly hot, and the generator acts as somewhat of an insulator, I worry the heat will travel through the containment and warm the cold side up to the point where out delta becomes too small
+Even if it's incredibly warm outside (say 90F) the generator should still function since our storage can be in the hundreds of degrees. 
+
+
 There are three main configuration types for a stirling engine:
 ![alternate text: Stirling engine configuration types](./StirlingConfigurations.JPG)
 
@@ -69,7 +78,7 @@ Stirling engine design focuses:
 
 - Minimize friction
 - Minimize dead space
-- Learn how to calculate and quantify power output
+- Learn how to calculate and quantify power output and necessary deltaT.
 - Decide on power conversion system (Piston, flywheel, diaphragm, etc.) and how it will interconnect with rest of electrial system. (do we want a battery, do we need to alter current, or have direct transmission?)
 
 </xmp>

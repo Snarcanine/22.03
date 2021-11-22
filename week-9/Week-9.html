@@ -1,0 +1,99 @@
+@@ -0,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<title>Lucy's Documentation for 22.03</title>
+
+<xmp theme="journal" style="display:none;">
+
+<topbar style="display:none;">
+	<item><a href="../index.html">Home</a></item>
+	<item><a href="../about.html">About</a></item>
+</topbar>
+
+
+# My Week
+
+
+## October 13:
+
+
+## Ongoing design concerns for project integration:
+
+
+- Heat transfer options:
+    1. Shifting solid conduit/insulators into and out of alignment 
+        - Pros:No electricity
+        - Cons:Moving parts add complexity, less user friendly potentially?
+    2. Liquid piping 
+        - Pros:No moving parts, potentially easier to have heat gradient
+        - Cons:Finding appropriate liquid medium that is stable and won't decay/corrode, need to integrate a pumping mechanism (likely requires electricity)
+- Electricity generation:
+    - Stirling generator
+        - Output?
+        - Resiliency and temperature range of functionality?
+    - Alternatives?
+        - Steam engine? Would require water being added, need to contain pressure, and may add additional danger/noise which is unwanted. 
+        - No other feasible alternatives at this time.
+- Solar tracking
+    - Mechanical vs. Automated.
+    - We've settled on automated which will require additional electrocity and systems. We're forming a solar tracking task group. After some discussion, the general outlined idea seems to be moving the array via stepper motors based on a sensor aray for light detection.
+- Beginning to layout total grill system:
+    - Where will the capture system go in relation to the rest of the systems?
+        - Based on conversation with the capture team, mounting reflectors above unit while still heating side of storage poses difficult challenge. Nevertheless, for spatial layout, we would strongly prefer they go above.
+- Current limiting factors:
+    - Storage capacity? Storage team is working on calculating total heat capacity of our two salt boxes.
+
+
+## My area of focus: Electrical system and stirling engine
+
+![alternate text: Introduction to Stirling Engines](./StirlingInfo.JPG)
+
+At its most basic, a stirling engine uses a temperature difference between two ends of a sealed chamber to drive a piston. 
+
+
+
+This has a couple benefits for our specific application. 
+
+
+1. the working fluid (a gas like air or helium) remains in a sealed chamber and has no need to be refreshed or refilled. (when using a gas like hydrogen there may be some escape through diffusion, but this won't be applicable in our case)
+2. The engine's efficiency and ability to function depends solely on the temperature difference between our hot and cold region, so we should be able to run it even with the substantial heat from our storage box so long as we can keep the "cold" end at a satisfactory temp.
+3. A bigger tmeperature delta actually increases the engine efficiency (as does increasing pressure within the containment chamber, but we may not want to deal with that)
+4. They are quite quiet compared to other alternatives which should increase our user-friendliness
+
+
+A couple downsides to using a stirling engine include:
+
+
+1. They tend to be somewhat heavy proportional to their power output. This makes them less feasible for anything that needs to be transported, but shouldn't be a major barrier in our case.
+2. You cannot easily adjust or modulate power output. They are best used as a constant speed engine. I'm a little unsure whether this will be a substantial downside or not as I don't yet know the expected power demands of our electrical systems.
+3. In some very rare cases, using air as the working fluid while also having it in contact with flammable substance such as lubricating oil can lead to an explosion hazard due to the high partial pressure of oxygen. I think this can fairly easily be avoided in our engine though.
+
+
+Addressing some initial questions and concerns:
+
+
+- Will the system be resilient enough for our application? I believe so. Maintenance demands are fairly minimal and these systems are designed to operate at steady-state for prolonged periods of time.
+- Will the output be large enough? Industrial stirling engines can operate at 100kW. For our purposes, I think we could generate a couple kW without absurd volume or pressure engineering demands. Still unsure of output we'll need.
+- What will the temperature range of functionality be and will the heating/cooling process of our storage medium substantially impact that? 
+Because a stirling generator runs on a temperature differential rather than raw input heat, I don't think the heating and cooling of our storage will be problematic.
+Additionally, so long as the working fluid's container is designed with the max temperature of our storage in mind (to ensure the vessl can handle the max possible temp and pressure) then it will be plenty resilient to withstand the lower part of the range.
+The one area I see for potential improvement would be to add some kind of coolant to better cool our cold side of the chamber. This could be something as simple as a water jacket which users could optionally fill. Because the storage has the potential to get incredibly hot, and the generator acts as somewhat of an insulator, I worry the heat will travel through the containment and warm the cold side up to the point where our delta becomes too small.
+Even if it's incredibly warm outside (say 90F), the generator would still function since our storage can be in the hundreds of degrees. We just have to keep the deltaT within the operational range. This deltaT range can be calculated in advance. 
+
+
+There are three main configuration types for a stirling engine:
+![alternate text: Stirling engine configuration types](./StirlingConfigurations.JPG)
+
+Stirling engine design focuses:
+
+
+- Minimize friction
+- Minimize dead space
+- Learn how to calculate and quantify power output and necessary deltaT.
+- Decide on power conversion system (Piston, flywheel, diaphragm, etc.) and how it will interconnect with rest of electrial system. (do we want a battery, do we need to alter current, or have direct transmission?)
+
+</xmp>
+
+<script src="https://strapdownjs.com/v/0.2/strapdown.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/joedf/strapdown-topbar@latest/assets/strapdown/strapdown-topbar.min.js"></script>
+</html>

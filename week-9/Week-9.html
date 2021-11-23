@@ -31,14 +31,16 @@ Our plan for detecting where the sun is in the sky is based on LDRs and a design
 Inspiration for our circuit layout and arduino code came from this example shared on arduino project hub: https://create.arduino.cc/projecthub/DemetrisEng/solar-tracker-35w-with-dc-motors-1b5ac6
 Our circuit will be using stepper motors and won't have the buttons, but fundamentally is very similar.
 
-Since I don't have much previous experience with arduino or electronics. I started small by simply testing out the LDRs and recreating the voltage divider circuit that was used in the example.
+Since I don't have much previous experience with arduino or electronics, I wanted to spend some time getting more familiar with how to use the breadboard and trace current through different parts of the circuit.
+I started small by simply testing out the LDRs and recreating the voltage divider circuit that was used in the example.
+
 ![alternate text: Example circuit diagram](./LDR_Circuit.JPG)
 ![alternate text: My circuit layout so far](./My_circuitlayout.JPG)
 
 To test the LDRs and help my own understanding, I used an LED since I didn't know how else to measure the voltage at the time. 
 As you can see, in the first picture the ambient light is not bright enough to lower the resistance of the LDR enough to turn the light on.
 In the second image, the intensely bright flashlight provides enough light to allow the LED to turn on. This is the fundamental premise we will use to track the sun.
-The LDRs will be set up in their own quadrants with a cross between them. The motors will the rotate based on the difference between the voltages of the different LDRs.
+The LDRs will be set up in their own quadrants with a cross between them. The motors will then rotate based on the difference between the voltages of the different LDRs.
 Once all the LDRs are outputting the same voltage, we'll know the system is pointed directly at the sun.
 
 ![alternate text: Unlit ldr](./LDR_Unlit.JPG)

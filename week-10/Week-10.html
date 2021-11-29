@@ -1,0 +1,55 @@
+@@ -0,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<title>Lucy's Documentation for 22.03</title>
+
+<xmp theme="journal" style="display:none;">
+
+<topbar style="display:none;">
+	<item><a href="../index.html">Home</a></item>
+	<item><a href="../about.html">About</a></item>
+</topbar>
+
+
+# My Week
+
+
+## October 17
+
+
+## Beginning the build phase
+
+
+
+- Integration/Solar tracking team began printing/cutting parts for the base this week. 
+- With that aspect underway, the biggest areas that the project still needs to address mainly relate to the motors and electrical system, so I started on that.
+
+## Solar tracking using Light Dependent Resistors (LDRs) 
+
+
+Our plan for detecting where the sun is in the sky is based on LDRs and a design we found during earlier precedent research.
+Inspiration for our circuit layout and arduino code came from this example shared on arduino project hub: https://create.arduino.cc/projecthub/DemetrisEng/solar-tracker-35w-with-dc-motors-1b5ac6
+Our circuit will be using stepper motors and won't have the buttons, but fundamentally is very similar.
+
+Since I don't have much previous experience with arduino or electronics, I wanted to spend some time getting more familiar with how to use the breadboard and trace current through different parts of the circuit.
+I started small by simply testing out the LDRs and recreating the voltage divider circuit that was used in the example.
+
+![alternate text: Example circuit diagram](./LDR_circuit.JPG)
+
+![alternate text: My circuit layout so far](./My_circuitlayout.jpg)
+
+To test the LDRs and help my own understanding, I used an LED since I didn't know how else to measure the voltage at the time. 
+As you can see, in the first picture the ambient light is not bright enough to lower the resistance of the LDR enough to turn the light on.
+In the second image, the intensely bright flashlight provides enough light to allow the LED to turn on. This is the fundamental premise we will use to track the sun.
+The LDRs will be set up in their own quadrants with a cross between them. The motors will then rotate based on the difference between the voltages of the different LDRs.
+Once all the LDRs are outputting the same voltage, we'll know the system is pointed directly at the sun.
+
+![alternate text: Unlit ldr](./LDR_Unlit.jpg)
+![alternate text: Lit ldr circuit](./LDR_Lit.jpg)
+
+
+</xmp>
+
+<script src="https://strapdownjs.com/v/0.2/strapdown.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/joedf/strapdown-topbar@latest/assets/strapdown/strapdown-topbar.min.js"></script>
+</html>

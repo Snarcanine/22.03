@@ -28,8 +28,8 @@ It's important that I know which sensor corresponds to which quadrant, so that I
 
 ## 1 Motor
 
-I then transitioned into actually using the sesnor data to drive a motor. Once again, drawing heavy insight from this freely available code: https://create.arduino.cc/projecthub/DemetrisEng/solar-tracker-35w-with-dc-motors-1b5ac6
-Following the same logic structure as the example, I averaged the values of one each side of the sensors (i.e average of the left sensors and average of the right sensors) then told the motor to step a certain direction depending on which is larger and reverse if the other is larger. 
+I then transitioned into actually using the sesnor data to drive a motor, once again drawing heavy insight from this freely available code: https://create.arduino.cc/projecthub/DemetrisEng/solar-tracker-35w-with-dc-motors-1b5ac6
+Following the same logic structure as the example, I averaged the values of each side of the sensors (i.e average of the left sensors and average of the right sensors) then told the motor to step a certain direction depending on which side is larger and reverse if the other is larger. 
 I managed to get one motor working so that it would step constantly and change direction based on where I moved a flashlight.
 
 ![alternate text: Setup with one Motor](./OneMotor.jpg)
@@ -39,8 +39,9 @@ I managed to get one motor working so that it would step constantly and change d
 
 I quickly ran into difficulty transitioning to two motors. I'm genuinely stumped on why the transition has been difficult since I essentially should have only needed to copy the same code and change the names of variables.
 I also want to work out a better method of having the system move one motor at a time and a better system for telling the motors to just hold their position. 
-This way they will hopefully not be bouncing around constantly which will limit the interferrence from passing shadows and whatnot, but I can't do this until the basic functions are working. 
-I've been trying to trouble shoot and debug for the rest of the week, but have yet to find the exact problem. 
+The example that I've been following uses a different type of motor, so it becomes less useful in figuring out these specific nuances for stepper motors.
+Hopefully, I'll eventually get them to a point where they're not be bouncing around constantly which will limit the interferrence from passing shadows, but I can't do this until the basic functions are working. 
+I've been trying to troubleshoot and debug for the rest of the week, but have yet to find the exact problem. 
 I seem to only get one of the motors to step, but it does so in only one direction and with a very irregular rhythm. 
 
 ![alternate text: Setup with Two Motors](./TwoMotors.jpg)

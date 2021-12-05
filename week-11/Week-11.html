@@ -14,10 +14,10 @@
 # My Week
 
 
-## November 22 and 24
+## November 29 through December 5
 
 
-## LDR analog outputs
+## Driving two motors
 
 Using the LDR setup that I had already tested with the LED, I used one of the arduino example codes to read the outputs of my different LDR "sensors" numerically.
 This gave me a better sense of what values the low interior lights register, and I compared the readings as I moved a flashlight around. I also used this to label each sensor and map it to an Analog input on the board.
@@ -26,7 +26,7 @@ It's important that I know which sensor corresponds to which quadrant, so that I
 ![alternate text: Analog setup with board](./AnalogSetup.jpg)
 ![alternate text: Values from LDR sensors](./AnalogOutputs.png)
 
-## 1 Motor
+## changing breadboard layout
 
 I then transitioned into actually using the sesnor data to drive a motor, once again drawing heavy insight from this freely available code: https://create.arduino.cc/projecthub/DemetrisEng/solar-tracker-35w-with-dc-motors-1b5ac6
 Following the same logic structure as the example, I averaged the values of each side of the sensors (i.e average of the left sensors and average of the right sensors) then told the motor to step a certain direction depending on which side is larger and reverse if the other is larger. 
@@ -35,7 +35,10 @@ I managed to get one motor working so that it would step constantly and change d
 ![alternate text: Setup with one Motor](./OneMotor.jpg)
 ![alternate text: My Code layout for driving the motors](./OneMotorCode.png)
 
-## 2 Motors
+## Getting outdoor sensor measurements
+
+
+## Cadding and cutting cross divider
 
 I quickly ran into difficulty transitioning to two motors. I'm genuinely stumped on why the transition has been difficult since I essentially should have only needed to copy the same code and change the names of variables.
 I also want to work out a better method of having the system move one motor at a time and a better system for telling the motors to just hold their position. 

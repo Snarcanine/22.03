@@ -14,41 +14,40 @@
 # My Week
 
 
-## November 29 through December 5
+## November 29 through final day
 
 
 ## Driving two motors
 
-Using the LDR setup that I had already tested with the LED, I used one of the arduino example codes to read the outputs of my different LDR "sensors" numerically.
-This gave me a better sense of what values the low interior lights register, and I compared the readings as I moved a flashlight around. I also used this to label each sensor and map it to an Analog input on the board.
-It's important that I know which sensor corresponds to which quadrant, so that I can plan out code for moving the collector.
+After debugging both software and hardware problems, I did finally get both motors to run and flip directions based on the correct light inputs. 
+This was a useful proof of concept since we will have to modify slightly for the final version.
 
-![alternate text: Analog setup with board](./AnalogSetup.jpg)
-![alternate text: Values from LDR sensors](./AnalogOutputs.png)
 
-## changing breadboard layout
+## Changing breadboard layout
 
-I then transitioned into actually using the sesnor data to drive a motor, once again drawing heavy insight from this freely available code: https://create.arduino.cc/projecthub/DemetrisEng/solar-tracker-35w-with-dc-motors-1b5ac6
-Following the same logic structure as the example, I averaged the values of each side of the sensors (i.e average of the left sensors and average of the right sensors) then told the motor to step a certain direction depending on which side is larger and reverse if the other is larger. 
-I managed to get one motor working so that it would step constantly and change direction based on where I moved a flashlight.
-
-![alternate text: Setup with one Motor](./OneMotor.jpg)
-![alternate text: My Code layout for driving the motors](./OneMotorCode.png)
+I then swapped to having our stepper drivers on the full-length breadboard to allow room for all four that we would be using in our final setup. This wiring configuration makes wiring all the motors easier as I can have their layouts be identical and easily visible. 
+This became essentially our final layout to what will be mounted on the base of the cooker.
+![alternate text: Layout on long breadboard](./TwoMotorBoard.jpg)
 
 ## Getting outdoor sensor measurements
 
+Gyalpo and I took some sensor readings outside to help get a better sense of what the ambient outdoor light reads on our sensors and to calibrate approporiately. 
+While indoors during class we usually only see a max of around 180 on the readout, outside we got around 600 in the shade and 800-900 in midday sunlight. 
+This is useful for us to clibrate the sensitivity for the sensors by changing the bounds which will make it move.
 
 ## Cadding and cutting cross divider
 
-I quickly ran into difficulty transitioning to two motors. I'm genuinely stumped on why the transition has been difficult since I essentially should have only needed to copy the same code and change the names of variables.
-I also want to work out a better method of having the system move one motor at a time and a better system for telling the motors to just hold their position. 
-The example that I've been following uses a different type of motor, so it becomes less useful in figuring out these specific nuances for stepper motors.
-Hopefully, I'll eventually get them to a point where they're not be bouncing around constantly which will limit the interferrence from passing shadows, but I can't do this until the basic functions are working. 
-I've been trying to troubleshoot and debug for the rest of the week, but have yet to find the exact problem. 
-I seem to only get one of the motors to step, but it does so in only one direction and with a very irregular rhythm. 
+I cadded, cut, and assembled the cross divider piece for the sensors. This piece is designed to increase sensitivity by helping it more clearly isolate which quadrant is brightest. 
+It will also hopefully help reduce errors from things like quickly passing shadows.
+![alternate text: Using the laser cutter](./Cutting1.jpg)
+![alternate text: Using the laser cutter](./Cutting2.jpg)
+![alternate text: Assembled divider](./CrossPiece.jpg)
 
-![alternate text: Setup with Two Motors](./TwoMotors.jpg)
+## Final mounted layout for all four motors
 
+While Gyalpo finalized his code, I mounted the new wiring setup now with all four drivers and the additional wiring for microstepping.
+
+![alternate text: Final Mounted board](./FinalMount.jpg)
 
 
 </xmp>
